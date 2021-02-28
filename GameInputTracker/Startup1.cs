@@ -18,6 +18,32 @@ namespace GameInputTracker
         [DllImport("user32.dll")]
         static extern short GetAsyncKeyState(System.Int32 vKey);
 
+        [StructLayout(LayoutKind.Sequential)]
+        public struct POINT
+        {
+            public int X;
+            public int Y;
+
+            public static implicit operator Point(POINT point)
+            {
+                return new Point(point.X, point.Y);
+            }
+        }
+
+        [DllImport("user32.dll")]
+        public static extern bool GetCursorPos(out POINT lpPoint);
+
+        public static Point GetCursorPosition()
+        {
+            POINT lpPoint;
+            GetCursorPos(out lpPoint);
+            // NOTE: If you need error handling
+            // bool success = GetCursorPos(out lpPoint);
+            // if (!success)
+
+            return lpPoint;
+        }
+
         private enum KeyboardLayout {
             QWERTY,
             DVORAK
@@ -40,8 +66,7 @@ namespace GameInputTracker
         public void processInput(IHubContext keyboardHub, IHubContext mouseHub)
         {
             Dictionary<string, short> keyMap = new Dictionary<string, short>();
-            Point previousCursorPosition = Cursor.Position;
-            Double previousFacingAngle = 0;
+            Point previousCursorPosition = GetCursorPosition();
 
             while (true)
             {
@@ -62,18 +87,21 @@ namespace GameInputTracker
                     keyMap[keyName] = keyState;
                 }
 
-                if (previousCursorPosition != Cursor.Position)
-                {
-                    double deltaX = Cursor.Position.X - previousCursorPosition.X;
-                    double deltaY = Cursor.Position.Y - previousCursorPosition.Y;
-                    double radians = Math.Atan2(deltaY, deltaX);
-                    double degrees = radians * 180 / Math.PI;
-                    double facingAngle = -1.0 * (degrees - 360.0 * Math.Floor(degrees / 360.0));
+                //if (previousCursorPosition != Cursor.Position)
+                //{
 
-                    previousCursorPosition = Cursor.Position;
+                //    Point currentCursorPosition = GetCursorPosition();
 
-                    mouseHub.Clients.All.setAngle(facingAngle);
-                }
+                //    double deltaX = currentCursorPosition.X - previousCursorPosition.X;
+                //    double deltaY = currentCursorPosition.Y - previousCursorPosition.Y;
+                //    double radians = Math.Atan2(deltaY, deltaX);
+                //    double degrees = radians * 180 / Math.PI;
+                //    double facingAngle = (degrees - 360.0 * Math.Floor(degrees / 360.0));
+
+                //    previousCursorPosition = currentCursorPosition;
+
+                //    mouseHub.Clients.All.setAngle(facingAngle);
+                //}
                 
                 
 
