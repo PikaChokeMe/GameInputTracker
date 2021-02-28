@@ -11,9 +11,6 @@ $.connection.keyboardHub.client.heartbeat = function () {
 }
 
 $.connection.keyboardHub.client.highlightKey = function (keyName, isActive) {
-    //console.log(keyName);
-    //console.log('key ' + keyName + ' is ' + (isActive ? 'up' : 'down'));
-
     var key = $('#' + keyName);
     if (key) {
         if (isActive) {
@@ -22,4 +19,20 @@ $.connection.keyboardHub.client.highlightKey = function (keyName, isActive) {
             key.removeClass('active');
         }
     }
+}
+
+$.connection.mouseHub.client.highlightKey = function (keyName, isActive) {
+    var key = $('#' + keyName);
+    if (key) {
+        if (isActive) {
+            key.addClass('active');
+        } else {
+            key.removeClass('active');
+        }
+    }
+}
+
+$.connection.mouseHub.client.setAngle = function (angle) {
+    console.log('set angles to:' + angle);
+    $('#pointer').css('transform', `rotate(${angle}deg)`)
 }

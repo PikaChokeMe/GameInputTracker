@@ -2,6 +2,10 @@
     ViewBag.Title = "Keyboard Mirror";
 }
 
+@section Styles {
+    <link rel="stylesheet" href="~/Content/Keyboard.less">
+}
+
 @section Scripts {
     <script src="~/Scripts/jquery.signalR-2.2.3.min.js"></script>
     <script src="~/signalr/js"></script>
@@ -59,10 +63,6 @@
                     <div class="key-cap">C</div>
                 </div>
             </div>
-        </div>
-        <div id="mouse">
-            <div id="LButton" class="mouse-button"></div>
-            <div id="RButton" class="mouse-button"></div>
         </div>
     </div>
     <div class="row">
