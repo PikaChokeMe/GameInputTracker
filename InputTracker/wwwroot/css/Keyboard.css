@@ -1,0 +1,89 @@
+.desktop {
+  padding-left: 50px;
+  width: 700px;
+}
+.desktop #upper-board {
+  display: flex;
+  flex-direction: row;
+}
+.desktop .row {
+  min-height: 64px;
+  display: flex;
+  flex-direction: row;
+}
+.desktop .row .key {
+  opacity: 0.6;
+  background-color: black;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  margin: 5px;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border-left: solid 5px black;
+  border-right: solid 5px black;
+  border-bottom: solid 12px black;
+  border-top: solid 2px black;
+}
+.desktop .row .key.hidden {
+  color: transparent !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+.desktop .row .key.hidden > .key-cap {
+  color: transparent !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+.desktop .row .key.active {
+  border-color: lightgrey;
+  background-color: lightgrey;
+}
+.desktop .row .key.active > .key-cap {
+  color: black;
+  background-color: white;
+}
+.desktop .row .key .key-cap {
+  background-color: black;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.desktop .row #Shift {
+  width: calc(64px * 2.5);
+}
+.desktop .row #Shift > .key-cap {
+  width: calc(50px * 3);
+}
+.desktop .row #Capital {
+  width: calc(64px * 2);
+}
+.desktop .row #Capital > .key-cap {
+  width: calc(50px * 2.5);
+}
+.desktop .row #Tab,
+.desktop .row #Control,
+.desktop .row #Menu {
+  width: calc(64px * 1.5);
+}
+.desktop .row #Tab > .key-cap,
+.desktop .row #Control > .key-cap,
+.desktop .row #Menu > .key-cap {
+  width: calc(64px * 2);
+}
+.desktop .row #Space {
+  width: calc(64px * 3.5);
+}
+.desktop .row #Space > .key-cap {
+  width: calc(64px * 4);
+}

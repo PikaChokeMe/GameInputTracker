@@ -1,0 +1,11 @@
+LIBRARY	CaptureInput
+
+EXPORTS
+	SetUserHookCallback
+	InitializeHook
+	UninitializeHook
+	Dispose
+	FilterMessage
+	
+	GetScrollState
+	GetKeyboardReading

@@ -1,0 +1,112 @@
+﻿@page
+@model InputTracker.Pages.KeyboardModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Keyboard.css">
+}
+
+@section Scripts {
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/keyboard.js"></script>
+}
+
+<div class="desktop">
+    <div id="upper-board">
+        <div class="alpha">
+            <div class="row">
+                <div id="Escape" class="key">
+                    <div class="key-cap">ESC</div>
+                </div>
+                <div id="D1" class="key">
+                    <div class="key-cap">1</div>
+                </div>
+                <div id="D2" class="key">
+                    <div class="key-cap">2</div>
+                </div>
+                <div id="D3" class="key">
+                    <div class="key-cap">3</div>
+                </div>
+                <div id="D4" class="key">
+                    <div class="key-cap">4</div>
+                </div>
+                <div id="D5" class="key">
+                    <div class="key-cap">5</div>
+                </div>
+            </div>
+            <div class="row">
+                <div id="Tab" class="key">
+                    <div class="key-cap">TAB</div>
+                </div>
+                <div id="Q" class="key">
+                    <div class="key-cap">Q</div>
+                </div>
+                <div id="W" class="key">
+                    <div class="key-cap">W</div>
+                </div>
+                <div id="E" class="key">
+                    <div class="key-cap">E</div>
+                </div>
+                <div id="R" class="key">
+                    <div class="key-cap">R</div>
+                </div>
+                <div id="T" class="key">
+                    <div class="key-cap">T</div>
+                </div>
+            </div>
+            <div class="row">
+                <div id="Capital" class="key">
+                    <div class="key-cap">CAPS</div>
+                </div>
+                <div id="A" class="key">
+                    <div class="key-cap">A</div>
+                </div>
+                <div id="S" class="key">
+                    <div class="key-cap">S</div>
+                </div>
+                <div id="D" class="key">
+                    <div class="key-cap">D</div>
+                </div>
+                <div id="F" class="key">
+                    <div class="key-cap">F</div>
+                </div>
+                <div id="G" class="key">
+                    <div class="key-cap">G</div>
+                </div>
+            </div>
+            <div class="row">
+                <div id="Shift" class="key">
+                    <div class="key-cap">SHIFT</div>
+                </div>
+                <div id="Z" class="key">
+                    <div class="key-cap">Z</div>
+                </div>
+                <div id="X" class="key">
+                    <div class="key-cap">X</div>
+                </div>
+                <div id="C" class="key">
+                    <div class="key-cap">C</div>
+                </div>
+                <div id="V" class="key">
+                    <div class="key-cap">V</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="Control" class="key">
+            <div class="key-cap">CTRL</div>
+        </div>
+        <div id="LWin" class="key">
+            <div class="key-cap">MOD</div>
+        </div>
+        <div id="Menu" class="key">
+            <div class="key-cap">ALT</div>
+        </div>
+        <div id="Space" class="key">
+            <div class="key-cap">_</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+﻿@page
+@model InputTracker.Pages.KeyboardModel
+@{
+    ViewData["Title"] = "Mouse";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Mouse.css">
+}
+
+@section Scripts {
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/mouse.js"></script>
+}
+
+<div class="desktop">
+    <div id="pointer">
+        <div id="arrow"></div>
+    </div>
+    <div id="mouse">
+        <div id="buttons">
+            <div id="LButton" class="mouse-button"></div>
+            <div id="RButton" class="mouse-button"></div>
+        </div>
+        <div id="mouse-body">
+        </div>
+    </div>
+</div>

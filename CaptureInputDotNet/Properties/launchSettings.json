@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CaptureScrollDotNet": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
